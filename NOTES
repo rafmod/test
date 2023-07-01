@@ -1,0 +1,28 @@
+# Install tool for building packages
+
+sudo python3 -m pip install --upgrade build
+
+# Install tool for uploading packages
+
+sudo python3 -m pip install --upgrade twine
+
+# Build the package (Create dist/*)
+
+python3 -m build
+
+# Upload the package to TestPypi (dist/*)
+
+python3 -m twine upload --repository testpypi dist/*
+
+# See package online
+
+https://test.pypi.org/project/nameutils_raforg
+
+# Install from TestPyPi
+
+sudo python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps nameutils_raforg
+
+# Upload to the real PyPi
+
+python3 -m twine upload dist/*
+
